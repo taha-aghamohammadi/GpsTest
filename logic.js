@@ -1,14 +1,14 @@
-window.addEventListener("load", () => {
-  navigator.geolocation.getCurrentPosition(
-    (p) => {
-      console.log(p);
-      document.getElementById("result").innerText =
-        ">>>" + p.coords.latitude + " , " + p.coords.longitude;
-    },
-    (e) => {
-      alert("showing Gps Enable");
-      document.getElementById("result").innerText = "Failed";
-      showGpsEnableInstructions();
-    }
-  );
+window.addEventListener('load', () => {
+    console.log("Waiting 1 second before requesting location...");
+    setTimeout(() => {
+        navigator.geolocation.getCurrentPosition(
+            (p) => {
+                document.getElementById("result").innerText = ">>> " + p.coords.latitude + " , " + p.coords.longitude;
+            },
+            (e) => {
+                document.getElementById("result").innerText = "Failed";
+                alert("Please enable GPS");
+            }
+        );
+    }, 1000); // 2000 milliseconds = 2 seconds
 });
