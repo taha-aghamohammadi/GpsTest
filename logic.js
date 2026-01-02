@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
             (e) => {
                 document.getElementById("result").innerText = "Failed";
                 alert("Please enable GPS");
+                showGpsEnableInstructions();
             }
         );
     }, 1000); // 2000 milliseconds = 2 seconds
