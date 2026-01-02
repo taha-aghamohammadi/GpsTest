@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
             },
             (e) => {
                 document.getElementById("result").innerText = "Failed";
-                alert("Please enable GPS");
+                alert("Please enable GPS!!");
                 showGpsEnableInstructions();
             }
         );
